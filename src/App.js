@@ -1,14 +1,14 @@
 import './App.css';
 import React, {Suspense} from 'react';
-
-const Nav = React.lazy(() => import('./components/Nav/Nav'))
+import 'xp.css'
+const TaskBar = React.lazy(() => import('./components/TaskBar/TaskBar'))
 
 
 const App = () => {
   return (
     <Suspense fallback={<div>Loading component</div>}>
     
-      <Nav/>
+      <TaskBar/>
     
     </Suspense>
   );

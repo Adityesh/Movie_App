@@ -1,0 +1,75 @@
+.taskbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.taskbar-start {
+    display: flex;
+    cursor: pointer;
+    background: radial-gradient(circle, #5eac56 0%, #3c873c 100%) center/cover no-repeat;
+    height: 100%;
+    padding: 5px 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.taskbar-start span {
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+.taskbar-date {
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding-right: 10px;
+}
+
+
+.start-menu {
+    position: absolute;
+    bottom: 29px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    width: 25%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.menu-header {
+    height: 8vh;
+    color: white;
+}
+
+.menu-body {
+    height: 55vh;
+}
+
+.footer-buttons {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: white;
+    padding: 0 4px;
+}
+
+.footer-buttons span {
+    padding: 0 3px;
+    font-family: sans-serif;
+}
+
+.menu-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
