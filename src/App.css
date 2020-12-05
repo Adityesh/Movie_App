@@ -11,3 +11,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination button {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.pagination p {
+    font-size: 15px;
+    font-weight: bold;
+    
+}

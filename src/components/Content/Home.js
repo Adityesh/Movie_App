@@ -4,6 +4,7 @@ import movieIcon from '../../assets/movie.png'
 import showIcon from '../../assets/tv.png';
 import Movies from './Movies/Movies';
 import Shows from './Shows/Show';
+import './Home.css';
 
 
 

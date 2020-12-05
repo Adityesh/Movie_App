@@ -5,6 +5,10 @@
     flex-direction: column;
 }
 
+#show, #movie {
+    cursor: pointer;
+}
+
 .home-icon {
     
     margin: 20px 10px 0 10px;

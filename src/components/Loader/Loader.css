@@ -1,0 +1,52 @@
+.loader {
+    height: 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.loader-outer {
+    height: 40px;
+    width: 320px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader > div {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    animation: loading 1.5s steps(12) infinite;
+}
+
+.loader > div:first-child {
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(3, 79, 243));
+}
+
+.loader > div:nth-child(2) {
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(68, 120, 235),rgb(3, 79, 243));
+}
+
+.loader > div:last-child {
+    background: linear-gradient(to bottom, rgb(255, 255, 255),rgb(130, 161, 229),rgb(68, 120, 235),rgb(3, 79, 243));
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(150px);
+
+    }
+
+    100% {
+        transform: translateX(300px);
+    }
+}

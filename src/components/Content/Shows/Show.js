@@ -6,16 +6,16 @@ import 'react-tabs/style/react-tabs.css';
 
 const Shows = ({ isVisible, closeModal }) => {
     return (
-        <Draggable bounds="parent">
+        <Draggable bounds="parent" handle="strong">
             <div className="shows-modal window" style={{ display: isVisible ? 'block' : 'none' }}>
-                <div className="title-bar">
+                <strong><div className="title-bar">
                     <div className="title-bar-text">A Complete Window</div>
                     <div className="title-bar-controls">
-                        <button aria-label="Minimize"></button>
-                        <button aria-label="Maximize"></button>
+                        
                         <button aria-label="Close" onClick={() => closeModal(false)}></button>
                     </div>
                 </div>
+                </strong>
                 <div className="window-body">
                     <Tabs>
                         <TabList>
