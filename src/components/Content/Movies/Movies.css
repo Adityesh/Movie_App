@@ -1,7 +1,6 @@
 .movies-modal {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 3%;
+    left: 10%;
     
-    margin: 0 auto;
 }

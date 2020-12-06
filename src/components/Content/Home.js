@@ -31,7 +31,7 @@ const Home = () => {
 
 
     return (
-        <div style={{ height: '100vh', width: '100%'}}>
+        <div style={{ height: '100vh', width: '100%', position : 'relative'}}>
             <Draggable bounds="parent">
                 <div style={{ display: 'inline-block', margin : '20px'}} id="movie" onClick={openMovieModal}>
                     <img src={movieIcon} height={48} width={48} alt="Movie Icon" draggable="false" className="movie"/>

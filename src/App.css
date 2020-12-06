@@ -10,6 +10,7 @@ body {
     background: url(https://i.redd.it/0ohv3srxzb631.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .pagination {
