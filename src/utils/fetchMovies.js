@@ -6,6 +6,7 @@ export async function fetchMovies(url, pageNumber) {
         result : [],
         error : false,
         message : '',
+        totalPages : 0
     }
 
     try {
@@ -14,6 +15,7 @@ export async function fetchMovies(url, pageNumber) {
         responseObj.result = result.results;
         responseObj.error = false;
         responseObj.message = 'Status 200'
+        responseObj.totalPages = result.total_pages
 
     } catch(err) {
         responseObj.result = [];

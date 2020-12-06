@@ -1,0 +1,15 @@
+.movie-container {
+    display: grid;
+    overflow-y: scroll;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 650px;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    column-gap: 20px;
+}
+
+.movie-element {
+    height: 320px;
+    width: auto;
+}
