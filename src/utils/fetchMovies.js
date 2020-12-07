@@ -84,3 +84,34 @@ export function imageUrl(path){
     const fullPath = `https://image.tmdb.org/t/p/w185${path}`;
     return fullPath;
 }
+
+
+export async function getSearchMovies(query) {
+    const qualifiedUrl = ` https://api.themoviedb.org/3/search/movie?api_key=265900472b5996ecdd533903f9fcdcd7&language=en-US&page=1&include_adult=false&query=${query}`;
+    const responseObj = {
+        result : [],
+        error : false,
+        message : '',
+        
+    }
+
+    try {
+        const res = await fetch(qualifiedUrl);
+        const result = await res.json();
+        if(result.errors) {
+            responseObj.result = []
+        } else {
+            responseObj.result = result.results;
+        }
+        
+        responseObj.error = false;
+        responseObj.message = 'Status 200'
+        
+    } catch(err) {
+        responseObj.result = [];
+        responseObj.error = true;
+        responseObj.message = err;
+    }
+
+    return responseObj;
+}

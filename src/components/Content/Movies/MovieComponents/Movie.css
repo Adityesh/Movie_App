@@ -127,3 +127,55 @@ li {
 .cast-info p:first-child, .cast-info p:last-child {
     font-weight: bold;
 }
+
+.search-container {
+    height: 700px;
+    width: 1000px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.search-results {
+    position: absolute;
+    top: 40px;
+    overflow-y: scroll;
+    height: 650px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+
+.search-results::-webkit-scrollbar {
+    display: none;
+}
+
+.search-results .result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 100px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.result p {
+    font-size: 15px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.result img {
+    transform: scale(0.4);
+}
+
+#search{
+    width: 400px;
+    border: 0.5px solid black;
+}
+
