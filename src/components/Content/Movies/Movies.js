@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Movies.css';
 import Draggable from 'react-draggable';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';

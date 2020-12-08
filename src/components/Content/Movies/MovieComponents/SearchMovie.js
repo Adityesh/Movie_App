@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { getSearchMovies, imageUrl } from '../../../../utils/fetchMovies';
 const MovieDetails = React.lazy(() => import('./MovieDetails'));
 
@@ -16,7 +16,7 @@ const SearchMovie = () => {
         setQuery(query);
 
         try {
-            const {result, error, message} = await getSearchMovies(query);
+            const {result} = await getSearchMovies(query);
             setResults(result);
         } catch(err) {
             console.log(err);
@@ -41,7 +41,7 @@ const SearchMovie = () => {
                     {results.map ? results.map((movie, index) => {
                         return <div className={'result'} onClick={() => openMovieDetailsModal(movie.poster_path, movie.id)}>
                             <p className="movie-name">{movie.title} {movie.release_date ? '(' + movie.release_date.substring(0,4) + ')' : null}</p>
-                            <img src={imageUrl(movie.poster_path)} />
+                            <img src={imageUrl(movie.poster_path)} alt="movie_poster"/>
                             
                         </div>
                     }) : 'N/A'}

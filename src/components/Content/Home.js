@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Draggable from 'react-draggable';
 import movieIcon from '../../assets/movie.png'
 import showIcon from '../../assets/tv.png';
