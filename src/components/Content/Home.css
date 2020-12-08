@@ -9,7 +9,83 @@
     cursor: pointer;
 }
 
+#show p, #movie p {
+    background-color: black;
+    text-align: center;
+}
+
 .home-icon {
     
     margin: 20px 10px 0 10px;
+}
+
+.clock-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 200px;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: 15px;
+    width: 15px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.clock-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    transform: scale(1.1);
+    z-index: -1;
+    background: inherit;
+    filter: blur(5px);
+}
+
+.blink {
+    animation: blink 1s linear infinite;
+}
+
+.date, .time {
+    font-size: 23px;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

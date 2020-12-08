@@ -1,14 +1,12 @@
 export async function getWallpaper() {
-    const randomWords = ["space", "scenery", "cyberpunk", "landscape", "nature", "forest", "ocean", "planets", "cloud", "night", "sky", "snow", "winter", "rain", "underwater", "environment", "lightning", "iceberg"];
-
-    const randomNumber = randomIndex(0, randomWords.length);
-
-    const query = randomWords[randomNumber];
+    
+    const height = window.screen.height;
+    const width = window.screen.width;
 
     const responseObj = {
         dimensions : {
-            height : window.screen.height,
-            width : window.screen.width
+            height : height,
+            width : width
         },
 
         imagePath : 'https://i.redd.it/0ohv3srxzb631.jpg',
@@ -16,24 +14,18 @@ export async function getWallpaper() {
         message : ''
     }
 
-    const url = `https://wallhaven.cc/api/v1/search?categories=100&q=${query}&atleast=${responseObj.dimensions.width}x${responseObj.dimensions.height}`
+    const url = `https://picsum.photos/${width}/${height}`
 
     try {
-        const response = await fetch(url, {
-            headers : {
-                "Access-Control-Allow-Origin" : "*",
-                "Access-Control-Allow-Credentials" : true 
-            }
-        });
-        const result = await response.json();
+        const response = await fetch(url);
+        responseObj.imagePath = response.url;
+        responseObj.message = "Success";
+        responseObj.error = false;
 
-        console.log(result);
     } catch(err) {
         console.log(err);
+        return responseObj;
     }
-}
 
-
-const randomIndex = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    return responseObj;
 }

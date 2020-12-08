@@ -39,3 +39,17 @@ body {
     background: url(https://i.redd.it/0ohv3srxzb631.jpg);
     transition: background 1s linear;
 }
+
+.component-loader {
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

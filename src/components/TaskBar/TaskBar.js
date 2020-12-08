@@ -13,7 +13,7 @@ const TaskBar = () => {
         let hours = currentDate.getHours();
         let minutes = currentDate.getMinutes().toString().length < 2 ? `0${currentDate.getMinutes()}` : currentDate.getMinutes();
         let ampm = hours >= 12 ? 'PM' : 'AM';
-        return hours + ":" + minutes + " " + ampm;;
+        return hours + ":" + minutes + " " + ampm;
     }
     
     useEffect(() => {
