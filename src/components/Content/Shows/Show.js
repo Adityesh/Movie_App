@@ -3,6 +3,8 @@ import './Shows.css'
 import Draggable from 'react-draggable';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+const OnAir = React.lazy(() => import('./ShowComponents/OnAir'));
+const Popular = React.lazy(() => import('./ShowComponents/Popular'))
 
 const Shows = ({ isVisible, closeModal }) => {
     return (
@@ -19,15 +21,15 @@ const Shows = ({ isVisible, closeModal }) => {
                 <div className="window-body">
                     <Tabs>
                         <TabList>
-                            <Tab>Title 1</Tab>
-                            <Tab>Title 2</Tab>
+                            <Tab>On the Air</Tab>
+                            <Tab>Popular Shows</Tab>
                         </TabList>
 
                         <TabPanel>
-                            <h2>Any content 1</h2>
+                            <OnAir />
                         </TabPanel>
                         <TabPanel>
-                            <h2>Any content 2</h2>
+                        <Popular/>
                         </TabPanel>
                     </Tabs>
                 </div>
