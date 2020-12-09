@@ -73,3 +73,7 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.pagination {
+    padding-top: 10px;
+}

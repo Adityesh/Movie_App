@@ -81,7 +81,7 @@ const MovieDetails = ({ movieId, movieImage, setVisible, isVisible }) => {
                                         return(
                                             <div key={cast.name}>
                                                 <div className="cast-image">
-                                                    <img src={imageUrl(cast.profile_path)} alt={cast.name} />
+                                                    <img src={imageUrl(cast.profile_path)} className="cast-pic" alt={cast.name} />
                                                     <div class="cast-info">
                                                     <p>{cast.name}</p>
                                                     <p>as</p>

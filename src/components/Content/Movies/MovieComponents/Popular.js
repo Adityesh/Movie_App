@@ -50,14 +50,13 @@ const Popular = () => {
 
     return(
         <div className="movies">
-            <p>Page {page} of {totalPage}</p>
             {isLoading ? <Loader /> : null}
             <div className="movie-container">
             
             {results.length !== 0 ? results.map((movie, index) => {
                 return (
                     <div key={index} className="movie-element" onClick={() => openMovieDetailsModal(movie.poster_path, movie.id)}>
-                        <img src={imageUrl(movie.poster_path)} alt="poster for Movie" />
+                        <img src={imageUrl(movie.poster_path)} className="movie-pic" alt="poster for Movie" />
                         <p>{movie.title} - {movie.release_date.substring(0,4)}</p>
                         
                         </div>
