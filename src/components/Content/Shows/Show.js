@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 const OnAir = React.lazy(() => import('./ShowComponents/OnAir'));
 const Popular = React.lazy(() => import('./ShowComponents/Popular'))
-
+const Search = React.lazy(() => import('./ShowComponents/SearchShow'));
 const Shows = ({ isVisible, closeModal }) => {
     return (
         <Draggable bounds="parent" handle="strong">
@@ -23,13 +23,17 @@ const Shows = ({ isVisible, closeModal }) => {
                         <TabList>
                             <Tab>On the Air</Tab>
                             <Tab>Popular Shows</Tab>
+                            <Tab>Search</Tab>
                         </TabList>
 
                         <TabPanel>
                             <OnAir />
                         </TabPanel>
                         <TabPanel>
-                        <Popular/>
+                            <Popular/>
+                        </TabPanel>
+                        <TabPanel>
+                            <Search />
                         </TabPanel>
                     </Tabs>
                 </div>

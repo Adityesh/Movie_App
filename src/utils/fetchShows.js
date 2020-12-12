@@ -93,7 +93,7 @@ export function imageUrl(path){
 
 
 export async function getSearchShows(query) {
-    const qualifiedUrl = ` https://api.themoviedb.org/3/search/movie?api_key=265900472b5996ecdd533903f9fcdcd7&language=en-US&page=1&include_adult=false&query=${query}`;
+    const qualifiedUrl = ` https://api.themoviedb.org/3/search/tv?api_key=265900472b5996ecdd533903f9fcdcd7&language=en-US&page=1&include_adult=false&query=${query}`;
     const responseObj = {
         result : [],
         error : false,
