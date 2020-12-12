@@ -6,6 +6,7 @@ import Movies from './Movies/Movies';
 import Shows from './Shows/Show';
 import './Home.css';
 import { getDate, getTime } from '../../utils/dateTime';
+const LandingMovie = React.lazy(() => import('./LandingMovie'));
 
 
 const Home = ({setClock, openClock}) => {
@@ -62,6 +63,12 @@ const Home = ({setClock, openClock}) => {
                     <p className="date">{date}</p>
                     <p className="time">{time.hours ? time.hours : '00'} <span className="blink">:</span> {time.minutes ? time.minutes : '00'} <span className="blink">:</span> {time.seconds ? time.seconds : '00'}
                     {time.ampm ? ' ' + time.ampm : ' PM'}</p>
+                </div>
+            </Draggable>
+            <Draggable bounds="parent">
+                <div style={{display : 'inline-block', margin : '20px'}} className="landing-container">
+                    <p style={{textAlign : 'center', fontSize : '15px', fontWeight : 'bold'}}>Movie of the week</p>
+                    <LandingMovie />
                 </div>
             </Draggable>
             <Movies isVisible={movie} closeModal={setMovie}/>
