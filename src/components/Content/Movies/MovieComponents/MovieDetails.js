@@ -59,7 +59,6 @@ const MovieDetails = ({ movieId, movieImage, setVisible, isVisible }) => {
                                 <li>Budget : {movie.budget === 0 ? 'N/A' : formatter.format(movie.budget)}</li>
                                 <li>Revenue : {movie.revenue === 0 ? 'N/A' : formatter.format(movie.revenue)}</li>
                                 <li>Genre : {movie.genres ? movie.genres.map((genre, i) => {
-                                    console.log(movie.genres.length)
                                     if (i === movie.genres.length - 1) {
                                         return `${genre.name}`
                                     } else {
@@ -77,7 +76,7 @@ const MovieDetails = ({ movieId, movieImage, setVisible, isVisible }) => {
                         <div className="cast-members">
                                 {movie.cast ? 
                                     movie.cast.map((cast) => {
-                                        console.log(cast.name + " " + cast.character)
+                                        
                                         return(
                                             <div key={cast.name}>
                                                 <div className="cast-image">

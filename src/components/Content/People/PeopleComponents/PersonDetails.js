@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchPeopleDetails, imageUrl } from '../../../../utils/fetchPeople';
+import { fetchPeopleDetails } from '../../../../utils/fetchPeople';
 import Loader from '../../../Loader/Loader';
 
 

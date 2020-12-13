@@ -80,9 +80,9 @@ const ShowDetails = ({ showId, showImage, setVisible, isVisible }) => {
                 <h4>Cast:</h4>
                 <div className="cast-members">
                         {show.cast ? 
-                            show.cast.map((cast) => {
+                            show.cast.map((cast, index) => {
                                 return(
-                                    <div key={cast.name}>
+                                    <div key={index}>
                                         <div className="cast-image">
                                             <img src={imageUrl(cast.profile_path)} className="cast-pic" alt={cast.name} />
                                             <div className="cast-info">
