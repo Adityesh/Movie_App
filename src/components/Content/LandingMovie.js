@@ -10,12 +10,11 @@ const LandingMovie = () => {
         })
     }, [])
 
-    console.log(movie || null) 
     
     return(
         <div className="landing-div">
             
-        <img src={imageUrl(movie.poster_path || '')} alt="movie poster" draggable="false"/>
+        <img src={imageUrl(movie.poster_path || null)} alt="movie poster" draggable="false"/>
         <div>
             
                 <p>{movie.title}</p>

@@ -2,21 +2,24 @@ import React, {useEffect, useState} from 'react';
 import Draggable from 'react-draggable';
 import movieIcon from '../../assets/movie.png'
 import showIcon from '../../assets/tv.png';
+import actorIcon from '../../assets/actor.png';
 import Movies from './Movies/Movies';
 import Shows from './Shows/Show';
+import People from './People/People';
 import './Home.css';
 import { getDate, getTime } from '../../utils/dateTime';
 const LandingMovie = React.lazy(() => import('./LandingMovie'));
-
+const LandingShow = React.lazy(() => import('./LandingShow'));
 
 const Home = ({setClock, openClock}) => {
     const [movie, setMovie] = useState(false);
     const [shows, setShows] = useState(false);
+    const [actor, setActor] = useState(false);
     const [date, setDate] = useState('');
     const [time, setTime] = useState({});
 
     const openMovieModal = () => {
-        if(shows) {
+        if(shows || actor) {
             setShows(false);
         }
 
@@ -24,12 +27,23 @@ const Home = ({setClock, openClock}) => {
     }
 
     const openShowModal = () => {
-        if(movie) {
+        if(movie || actor) {
             setMovie(false);
         }
 
         setShows(true);
     }
+
+    const openActorModal = () => {
+        if(shows || movie) {
+            setActor(false);
+        }
+
+        setActor(true);
+    }
+
+
+
 
     useEffect(() => {
         setDate(getDate());
@@ -58,6 +72,12 @@ const Home = ({setClock, openClock}) => {
                 </div>
             </Draggable>
             <Draggable bounds="parent">
+                <div style={{ display: 'inline-block', margin : '20px'}} id="show" onClick={openActorModal}>
+                    <img src={actorIcon} height={48} width={48} alt="Actor Icon" draggable="false" className="show"/>
+                    <p style={{color : "white"}} className="show">People</p>
+                </div>
+            </Draggable>
+            <Draggable bounds="parent">
                 <div className="clock-container" style={{ display: openClock ? 'inline-block' : 'none', margin : '20px'}}>
                     <span className="close-button" onClick={() => setClock(false)}>X</span>
                     <p className="date">{date}</p>
@@ -71,8 +91,15 @@ const Home = ({setClock, openClock}) => {
                     <LandingMovie />
                 </div>
             </Draggable>
+            <Draggable bounds="parent">
+                <div style={{display : 'inline-block', margin : '20px', top : '290px'}} className="landing-container">
+                    <p style={{textAlign : 'center', fontSize : '15px', fontWeight : 'bold'}}>Show of the week</p>
+                    <LandingShow />
+                </div>
+            </Draggable>
             <Movies isVisible={movie} closeModal={setMovie}/>
             <Shows isVisible={shows} closeModal={setShows}/>
+            <People isVisible={actor} closeModal={setActor} />
             
         </div>
     )

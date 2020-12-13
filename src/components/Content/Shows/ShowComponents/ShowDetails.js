@@ -22,13 +22,14 @@ const ShowDetails = ({ showId, showImage, setVisible, isVisible }) => {
     }, [showId])
 
 
+
     return (
 
         <div className="movie-details-container window" style={{ display: isVisible ? 'block' : 'none' }}>
 
-            <div class="title-bar">
-                <div class="title-bar-text">{show.name}</div>
-                <div class="title-bar-controls">
+            <div className="title-bar">
+                <div className="title-bar-text">{show.name}</div>
+                <div className="title-bar-controls">
 
                     <button aria-label="Close" onClick={() => setVisible(false)}></button>
                 </div>
@@ -77,14 +78,14 @@ const ShowDetails = ({ showId, showImage, setVisible, isVisible }) => {
             </div>
             <div className="cast-card">
                 <h4>Cast:</h4>
-                <div class="cast-members">
+                <div className="cast-members">
                         {show.cast ? 
                             show.cast.map((cast) => {
                                 return(
                                     <div key={cast.name}>
                                         <div className="cast-image">
                                             <img src={imageUrl(cast.profile_path)} className="cast-pic" alt={cast.name} />
-                                            <div class="cast-info">
+                                            <div className="cast-info">
                                             <p>{cast.name}</p>
                                             <p>as</p>
                                 <p>{cast.roles[0].character ? cast.roles[0].character : 'N/A'} ({cast.roles ? cast.roles[0].episode_count + ' episodes' : 'N/A'})</p>

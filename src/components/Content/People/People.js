@@ -1,23 +1,19 @@
 import React from 'react';
-import './Movies.css';
+import './People.css';
 import Draggable from 'react-draggable';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-const NowPlaying = React.lazy(() => import('./MovieComponents/NowPlaying'));
-const Popular = React.lazy(() => import('./MovieComponents/Popular'));
-const Search = React.lazy(() => import('./MovieComponents/SearchMovie'));
+const Popular = React.lazy(() => import('./PeopleComponents/Popular'));
+const SearchPeople = React.lazy(() => import('./PeopleComponents/Search'));
 
-
-const Movies = ({ isVisible, closeModal }) => {
-
-
+const People = ({ isVisible, closeModal }) => {
 
     return (
         <Draggable bounds="parent" handle="strong">
 
 
-            <div className="movies-modal window" style={{ display: isVisible ? 'block' : 'none' }}>
+            <div className="people-modal window" style={{ display: isVisible ? 'block' : 'none' }}>
                 <strong>
                 <div className="title-bar">
                     <div className="title-bar-text">Movies</div>
@@ -31,19 +27,16 @@ const Movies = ({ isVisible, closeModal }) => {
                 <div className="window-body">
                     <Tabs>
                         <TabList>
-                            <Tab>Now Playing</Tab>
-                            <Tab>Popular Movies</Tab>
+                            
+                            <Tab>Popular</Tab>
                             <Tab>Search</Tab>
                         </TabList>
 
                         <TabPanel>
-                            <NowPlaying/>
+                            <Popular/>
                         </TabPanel>
                         <TabPanel>
-                            <Popular />
-                        </TabPanel>
-                        <TabPanel>
-                            <Search />
+                            <SearchPeople/>
                         </TabPanel>
                     </Tabs>
                 </div>
@@ -56,4 +49,4 @@ const Movies = ({ isVisible, closeModal }) => {
 }
 
 
-export default Movies;
+export default People;
