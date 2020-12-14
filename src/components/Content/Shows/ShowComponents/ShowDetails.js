@@ -68,7 +68,7 @@ const ShowDetails = ({ showId, showImage, setVisible, isVisible }) => {
                                 return `${genre.name}, `;
                             }
                         }) : 'N/A'}</li>
-                        <li>Latest Episode : <strong>{show.latest ? show.latest.name : 'N/A'}</strong> ({show.latest ? show.latest.air_date.split("-").reverse().join("-") : 'N/A'})</li>
+                        <li>Latest Episode : <strong>{show.latest ? show.latest.name : 'N/A'}</strong> ({show.latest_air_date ? show.latest.air_date.split("-").reverse().join("-") : 'N/A'})</li>
                         <li>Status : {show.status}</li>
                     </ul>
                 </div>

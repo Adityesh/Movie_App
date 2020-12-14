@@ -34,7 +34,7 @@ const SearchPerson = () => {
     return(
         <div className={'search-container'}>
             <div className="field-row search-box">
-                <label htmlFor="search">Search for movies</label>
+                <label htmlFor="search">Search for actors/actresses</label>
                 <input id="search" type="text" onChange={(e) => handleChange(e.target.value)} value={query}/>
                 <div className="search-results" style={{overflow : results.length === 0 ? 'hidden' : null}}>
                     {results.map ? results.map((person, index) => {

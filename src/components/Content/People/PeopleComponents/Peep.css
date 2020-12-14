@@ -1,0 +1,64 @@
+.person-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.person-container-top {
+    display: flex;
+    width: 700px;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+
+.person-img {
+    width: 200px;
+}
+
+.person-details {
+    width: 500px;
+}
+
+.person-details p {
+    font-size: 1.5em;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+.person-details p:last-child {
+    text-align: left;
+    border-top: 1px solid black;
+    height: 250px;
+    line-height: 1.5rem;
+    padding: 10px 5px 10px 5px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
+}
+
+.person-container-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.person-movies, .person-shows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    
+}
+
+
+.img-card img {
+    transform: scale(0.5);
+    height: 200px;
+    padding: 0;
+}
