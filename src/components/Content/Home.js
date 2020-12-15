@@ -11,10 +11,8 @@ import { getDate, getTime } from '../../utils/dateTime';
 const LandingMovie = React.lazy(() => import('./LandingMovie'));
 const LandingShow = React.lazy(() => import('./LandingShow'));
 
-const Home = ({setClock, openClock}) => {
-    const [movie, setMovie] = useState(false);
-    const [shows, setShows] = useState(false);
-    const [actor, setActor] = useState(false);
+const Home = ({setClock, openClock, actor, movie, shows, setMovie, setActor, setShows, movieModal, setMovieModal, showModal, setShowModal}) => {
+    
     const [date, setDate] = useState('');
     const [time, setTime] = useState({});
 
@@ -86,13 +84,15 @@ const Home = ({setClock, openClock}) => {
                 </div>
             </Draggable>
             <Draggable bounds="parent">
-                <div style={{display : 'inline-block', margin : '20px'}} className="landing-container">
+                <div style={{display : movieModal ? 'inline-block' : 'none', margin : '20px'}} className="landing-container">
+                    <span className="close-button" onClick={() => setMovieModal(false)}>X</span>
                     <p style={{textAlign : 'center', fontSize : '15px', fontWeight : 'bold'}}>Movie of the week</p>
                     <LandingMovie />
                 </div>
             </Draggable>
             <Draggable bounds="parent">
-                <div style={{display : 'inline-block', margin : '20px', top : '290px'}} className="landing-container">
+                <div style={{display : showModal ? 'inline-block' : 'none', margin : '20px', top : '290px'}} className="landing-container">
+                    <span className="close-button" onClick={() => setShowModal(false)}>X</span>
                     <p style={{textAlign : 'center', fontSize : '15px', fontWeight : 'bold'}}>Show of the week</p>
                     <LandingShow />
                 </div>

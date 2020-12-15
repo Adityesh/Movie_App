@@ -2,9 +2,14 @@ import React, {useState, useEffect} from 'react';
 import image from '../../assets/windows.png'
 import shutdown from '../../assets/shutdown1.png';
 import restart from '../../assets/restart.png'
+import tvIcon from '../../assets/menu-tv.png';
+import movieIcon from '../../assets/menu-movie.png';
+import personIcon from '../../assets/menu-person.png';
+import timeIcon from '../../assets/time.png';
+
 import './TaskBar.css'
 
-const TaskBar = () => {
+const TaskBar = ({actor, shows, movie, setMovie, setActor, setShows, setClock, movieModal, setMovieModal, showModal, setShowModal}) => {
     const [date, setDate] = useState("00:00 AM");
     const [isClicked, setClicked] = useState(false);
 
@@ -39,10 +44,30 @@ const TaskBar = () => {
                 </div>
                 <div className="menu-body">
                     <div className="menu-left">
-
+                        <li onClick={() => {setShows(true);setClicked(!isClicked)}}>
+                            <img src={tvIcon} alt="tv icon"/>
+                            <p>TV Shows</p>
+                        </li>
+                        <li onClick={() => {setMovie(true);setClicked(!isClicked)}}>
+                            <img src={movieIcon} alt="movie icon"/>
+                            <p>Movies</p>
+                        </li>
+                        <li onClick={() => {setActor(true);setClicked(!isClicked)}}>
+                            <img src={personIcon} alt="person icon"/>
+                            <p>Actors/Actresses</p>
+                        </li>
+                        <li onClick={() => {setMovieModal(true);setClicked(!isClicked)}}> 
+                            <p>Movie of the week</p>
+                        </li>
+                        <li onClick={() => {setShowModal(true);setClicked(!isClicked)}}>
+                            <p>Show of the week</p>
+                        </li>
                     </div>
                     <div className="menu-right">
-
+                    <li onClick={() => {setClock(true);setClicked(!isClicked)}}>
+                            <img src={timeIcon} alt="movie icon"/>
+                            <p>Date/Time</p>
+                    </li>
                     </div>
                 </div>
 

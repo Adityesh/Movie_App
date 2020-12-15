@@ -14,7 +14,7 @@ const PersonDetails = ({ personId, personImage, setVisible, isVisible }) => {
         fetchPeopleDetails(personId)
             .then((personDetails) => {
                 setPerson(personDetails)
-                filterCastPerson(personDetails.cast);
+                filterCastPerson(personDetails.cast || []);
                 setLoading(false);
             })
             .catch((err) => {

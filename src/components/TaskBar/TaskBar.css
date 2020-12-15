@@ -53,7 +53,13 @@
 
 .menu-body {
     height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
+
+
 
 .footer-buttons {
     display: flex;
@@ -76,4 +82,50 @@
 
 .pagination {
     padding-top: 10px;
+}
+
+
+.menu-left, .menu-right {
+    position: relative;
+    height: 100%;
+}
+
+.menu-left img, .menu-right img {
+    height: 36px;
+    width: 36px;
+}
+
+.menu-left li, .menu-right li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu-left li:hover, .menu-right li:hover {
+    background-color: rgb(43, 128, 240);
+    color: white;
+}
+
+.menu-left li p, .menu-right li p{
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 5px;
+
+}
+
+.menu-body > div {
+    width: 50%;
+}
+
+.menu-left::before {
+    content : '';
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    border-radius: 50%;
+    background-color: rgb(121, 121, 121);
 }
