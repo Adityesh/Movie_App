@@ -25,8 +25,8 @@ const PersonDetails = ({ personId, personImage, setVisible, isVisible }) => {
     }, [personId])
 
     const filterCastPerson = (cast) => {
-        const movies = [];
-        const shows = [];
+        let movies = [];
+        let shows = [];
 
         cast.forEach(element => {
             if(element.media_type === "movie") {
@@ -43,7 +43,6 @@ const PersonDetails = ({ personId, personImage, setVisible, isVisible }) => {
         setShows(shows);
     }
 
-    console.log(shows)
 
     return (
 
@@ -78,20 +77,26 @@ const PersonDetails = ({ personId, personImage, setVisible, isVisible }) => {
                     </div>
                 </div>
                 <div className="person-container-bottom">
-                    {/* <div className="person-movies">
+                <p className="heading">Movies</p>
+                    <div className="person-movies">
+                        
                         {movies ? movies.map((movie, index) => {
                             return (
                                 <div className="img-card">
                                     <img src={movie ? imageUrl(movie.poster_path || undefined) : ''} alt="movie-poster" />
+                                    <p className="poster-title">{movie.title}</p>
                                 </div>
                             )
                         }) : null}
-                    </div> */}
+                    </div>
+                    <p className="heading">Shows</p>
                     <div className="person-shows">
+                        
                         {shows ? shows.map((show, index) => {
                                 return (
                                     <div className="img-card">
                                         <img src={show ? imageUrl(show.poster_path || undefined) : ''} alt="movie-poster" />
+                                        <p className="poster-title">{show.name}</p>
                                     </div>
                                 )
                             }) : null}
