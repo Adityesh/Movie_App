@@ -32,7 +32,7 @@ N/A
 TMDB API was used to fetch movies, tv, shows and list of actors.
 
 
-## Live Demo Video
+## Live Demo Website
 [Website](http://movie-app.adityesh.vercel.app/)
 
 ## License
