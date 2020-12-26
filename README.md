@@ -1,4 +1,4 @@
-## Book Manager
+## Movie and Shows Catalog
 A web application that let's users search and view popular movies, tv shows, and celebrities in an Windows XP themed desktop environment.
 
 ## Motivation
